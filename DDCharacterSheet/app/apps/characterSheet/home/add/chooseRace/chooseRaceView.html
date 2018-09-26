@@ -1,0 +1,142 @@
+﻿<div layout-gt-sm="row" style="padding:15px;">
+    <div layout="column" flex-gt-sm="25">
+        <md-card ng-repeat="race in ChooseRaceVC.Races" ng-if="($index - 0) % 4 === 0">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-headline">{{race.Name}}</span>
+                    <span class="md-subhead">Lives {{race.AgeRange}} years</span>
+                    <span class="md-subhead">{{race.Size}} size</span>
+                </md-card-header-text>
+            </md-card-header>
+            <img ng-src="{{race.RaceImage}}" class="md-card-image" alt="Class Image">
+            <div ng-if="race.IsShowMoreInfo">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-title">More Info</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>{{race.Description}}</p>
+                    <p class="md-title">Ability Score Increases</p>
+                    <p ng-repeat="as in race.ASIncrease">{{as.Type}}: {{as.Amount}}</p>
+                    <p class="md-title">Other Info</p>
+                    <p>Speed: {{race.Speed}}</p>
+                    <p>Languages: {{race.Languages}}</p>
+                </md-card-content>
+            </div>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-icon-button md-primary" ng-click="race.IsShowMoreInfo = !race.IsShowMoreInfo">
+                    <md-icon>info</md-icon>
+                </md-button>
+                <md-button class="md-raised md-primary" ng-click="ChooseRaceVC.ChooseRace(race)">
+                    Choose
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+    <div layout="column" flex-gt-sm="25">
+        <md-card ng-repeat="race in ChooseRaceVC.Races" ng-if="($index - 1) % 4 === 0">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-headline">{{race.Name}}</span>
+                    <span class="md-subhead">Lives {{race.AgeRange}} years</span>
+                    <span class="md-subhead">{{race.Size}} size</span>
+                </md-card-header-text>
+            </md-card-header>
+            <img ng-src="{{race.RaceImage}}" class="md-card-image" alt="Class Image">
+            <div ng-if="race.IsShowMoreInfo">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-title">More Info</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>{{race.Description}}</p>
+                    <p class="md-title">Ability Score Increases</p>
+                    <p ng-repeat="as in race.ASIncrease">{{as.Type}}: {{as.Amount}}</p>
+                    <p class="md-title">Other Info</p>
+                    <p>Speed: {{race.Speed}}</p>
+                    <p>Languages: {{race.Languages}}</p>
+                </md-card-content>
+            </div>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-icon-button md-primary" ng-click="race.IsShowMoreInfo = !race.IsShowMoreInfo">
+                    <md-icon>info</md-icon>
+                </md-button>
+                <md-button class="md-raised md-primary" ng-click="ChooseRaceVC.ChooseRace(race)">
+                    Choose
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+    <div layout="column" flex-gt-sm="25">
+        <md-card ng-repeat="race in ChooseRaceVC.Races" ng-if="($index - 2) % 4 === 0">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-headline">{{race.Name}}</span>
+                    <span class="md-subhead">Lives {{race.AgeRange}} years</span>
+                    <span class="md-subhead">{{race.Size}} size</span>
+                </md-card-header-text>
+            </md-card-header>
+            <img ng-src="{{race.RaceImage}}" class="md-card-image" alt="Class Image">
+            <div ng-if="race.IsShowMoreInfo">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-title">More Info</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>{{race.Description}}</p>
+                    <p class="md-title">Ability Score Increases</p>
+                    <p ng-repeat="as in race.ASIncrease">{{as.Type}}: {{as.Amount}}</p>
+                    <p class="md-title">Other Info</p>
+                    <p>Speed: {{race.Speed}}</p>
+                    <p>Languages: {{race.Languages}}</p>
+                </md-card-content>
+            </div>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-icon-button md-primary" ng-click="race.IsShowMoreInfo = !race.IsShowMoreInfo">
+                    <md-icon>info</md-icon>
+                </md-button>
+                <md-button class="md-raised md-primary" ng-click="ChooseRaceVC.ChooseRace(race)">
+                    Choose
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+    <div layout="column" flex-gt-sm="25">
+        <md-card ng-repeat="race in ChooseRaceVC.Races" ng-if="($index - 3) % 4 === 0">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-headline">{{race.Name}}</span>
+                    <span class="md-subhead">Lives {{race.AgeRange}} years</span>
+                    <span class="md-subhead">{{race.Size}} size</span>
+                </md-card-header-text>
+            </md-card-header>
+            <img ng-src="{{race.RaceImage}}" class="md-card-image" alt="Class Image">
+            <div ng-if="race.IsShowMoreInfo">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-title">More Info</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>{{race.Description}}</p>
+                    <p class="md-title">Ability Score Increases</p>
+                    <p ng-repeat="as in race.ASIncrease">{{as.Type}}: {{as.Amount}}</p>
+                    <p class="md-title">Other Info</p>
+                    <p>Speed: {{race.Speed}}</p>
+                    <p>Languages: {{race.Languages}}</p>
+                </md-card-content>
+            </div>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-icon-button md-primary" ng-click="race.IsShowMoreInfo = !race.IsShowMoreInfo">
+                    <md-icon>info</md-icon>
+                </md-button>
+                <md-button class="md-raised md-primary" ng-click="ChooseRaceVC.ChooseRace(race)">
+                    Choose
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</div>

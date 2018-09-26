@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="CharacterSheetApp">
+<head>
+    <title>D&amp;D Character Sheet</title>
+    <!--Meta Tags-->
+    <meta charset="utf-8" />
+    <meta hhttp-equiv="X-Frame-Options" content="sameorigin" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!-- forces edge mode for ie -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"><!-- forces mobile view, pixel ratio 1:1 -->
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--Add to home screen for iOS-->
+    <meta name="mobile-web-app-capable" content="yes"><!--Add to home screen Android-->
+    <!--Libraries-->
+
+    <link href="Content/angular-material.css" rel="stylesheet" type="text/css" />
+    <link href="Content/material-design-icons-font/iconfont/material-icons.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/moment.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/AngularUI/angular-ui-router.js"></script>
+    <script src="Scripts/angular-aria.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/angular-messages.js"></script>
+    <script src="Scripts/angular-material.js"></script>
+
+    <!--App Scripts-->
+    <script src="app/apps/characterSheet/characterSheetApp.js"></script>
+    <script src="app/apps/characterSheet/characterSheetApp.config.js"></script>
+    <!--Factories-->
+    <script src="app/apps/characterSheet/helpers/characterCreateHelper.js"></script>
+    <!--Controllers-->
+    <script src="app/apps/characterSheet/home/homeController.js"></script>
+    <script src="app/apps/characterSheet/home/settings/settingsController.js"></script>
+    <script src="app/apps/characterSheet/home/characters/charactersController.js"></script>
+    <script src="app/apps/characterSheet/home/add/addController.js"></script>
+    <script src="app/apps/characterSheet/home/add/characterStart/characterStartController.js"></script>
+    <script src="app/apps/characterSheet/home/add/chooseClass/chooseClassController.js"></script>
+    <script src="app/apps/characterSheet/home/add/chooseRace/chooseRaceController.js"></script>
+</head>
+<body>
+  <md-content ui-view layout="row" style="height:100%; width:100%;"></md-content>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<md-sidenav class="md-sidenav-left" md-component-id="homeLeft" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>D&D Character Creator</h2>
+            <span flex></span>
+            <md-button ng-click="HomeVC.ToggleSideNav('homeLeft')" class="md-icon-button" hide-gt-md>
+                <md-icon>close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-content>
+        <md-button class="md-primary md-raised" style="width:95%;" ui-sref="characterSheet.characters">
+            <md-icon>supervisor_account</md-icon>
+            <span>Character Manager</span>
+        </md-button>
+    </md-content>
+</md-sidenav>
+<div layout="column" flex>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" ng-click="HomeVC.ToggleSideNav('homeLeft')" aria-label="Sidebar" hide-gt-md>
+                <md-icon>menu</md-icon>
+            </md-button>
+            <h2 flex md-truncate></h2>
+            <div layout="row" layout-align="center center">
+                <md-fab-speed-dial md-open="HomeVC.IsFabOpen" class="md-scale" md-direction="left">
+                    <md-fab-trigger>
+                        <md-button aria-label="account" class="md-fab md-raised">
+                            <md-icon>account_circle</md-icon>
+                        </md-button>
+                    </md-fab-trigger>
+                    <md-fab-actions>
+                        <md-button aria-label="Logout" class="md-fab md-raised md-mini">
+                            <md-tooltip md-direction="bottom">Logout</md-tooltip>
+                            <md-icon aria-label="Logout">exit_to_app</md-icon>
+                        </md-button>
+                        <md-button aria-label="Settings" class="md-fab md-raised md-mini">
+                            <md-tooltip md-direction="bottom">Account Settings</md-tooltip>
+                            <md-icon aria-label="Settings" ui-sref="characterSheet.settings">settings</md-icon>
+                        </md-button>
+                        <md-button aria-label="Quick Create" class="md-fab md-raised md-mini">
+                            <md-tooltip md-direction="bottom">Quick Create</md-tooltip>
+                            <md-icon aria-label="Quick Create">fast_forward</md-icon>
+                        </md-button>
+                    </md-fab-actions>
+                </md-fab-speed-dial>
+            </div>
+        </div>
+    </md-toolbar>
+    <md-content ui-view="content"></md-content>
+</div>
+

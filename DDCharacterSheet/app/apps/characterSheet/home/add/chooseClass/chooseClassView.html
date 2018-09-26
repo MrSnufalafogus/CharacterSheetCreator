@@ -1,0 +1,138 @@
+﻿<div layout-gt-sm="row" style="padding:15px;">
+    <div layout="column" flex-gt-sm="25">
+        <md-card ng-repeat="class in ChooseClassVC.Classes" ng-if="($index - 0) % 4 === 0">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-headline">{{class.Name}}</span>
+                    <span class="md-subhead">Hit Die: {{class.HitDie}}</span>
+                    <span class="md-subhead">Primary Ability: {{class.PrimaryAbility}}</span>
+                </md-card-header-text>
+            </md-card-header>
+            <img ng-src="{{class.ClassImage}}" class="md-card-image" alt="Class Image">
+            <div ng-if="class.IsShowMoreInfo">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-title">More Info</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>{{class.Description}}</p>
+                    <p class="md-title">Weapon and Armor Proficiencies</p>
+                    <p>{{class.ArmorProf}}{{class.WeaponProf}}</p>
+                    <p class="md-title">Other Info</p>
+                    <p>Saving Throws: {{class.SavingThrows}}</p>
+                </md-card-content>
+            </div>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-icon-button md-primary" ng-click="class.IsShowMoreInfo = !class.IsShowMoreInfo">
+                    <md-icon>info</md-icon>
+                </md-button>
+                <md-button class="md-raised md-primary" ng-click="ChooseClassVC.ChooseClass(class)">
+                    Choose
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+    <div layout="column" flex-gt-sm="25">
+        <md-card ng-repeat="class in ChooseClassVC.Classes" ng-if="($index - 1) % 4 === 0">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-headline">{{class.Name}}</span>
+                    <span class="md-subhead">Hit Die: {{class.HitDie}}</span>
+                    <span class="md-subhead">Primary Ability: {{class.PrimaryAbility}}</span>
+                </md-card-header-text>
+            </md-card-header>
+            <img ng-src="{{class.ClassImage}}" class="md-card-image" alt="Class Image">
+            <div ng-if="class.IsShowMoreInfo">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-title">More Info</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>{{class.Description}}</p>
+                    <p class="md-title">Weapon and Armor Proficiencies</p>
+                    <p>{{class.ArmorProf}}{{class.WeaponProf}}</p>
+                    <p class="md-title">Other Info</p>
+                    <p>Saving Throws: {{class.SavingThrows}}</p>
+                </md-card-content>
+            </div>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-icon-button md-primary" ng-click="class.IsShowMoreInfo = !class.IsShowMoreInfo">
+                    <md-icon>info</md-icon>
+                </md-button>
+                <md-button class="md-raised md-primary" ng-click="ChooseClassVC.ChooseClass(class)">
+                    Choose
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+    <div layout="column" flex-gt-sm="25">
+        <md-card ng-repeat="class in ChooseClassVC.Classes" ng-if="($index - 2) % 4 === 0">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-headline">{{class.Name}}</span>
+                    <span class="md-subhead">Hit Die: {{class.HitDie}}</span>
+                    <span class="md-subhead">Primary Ability: {{class.PrimaryAbility}}</span>
+                </md-card-header-text>
+            </md-card-header>
+            <img ng-src="{{class.ClassImage}}" class="md-card-image" alt="Class Image">
+            <div ng-if="class.IsShowMoreInfo">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-title">More Info</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>{{class.Description}}</p>
+                    <p class="md-title">Weapon and Armor Proficiencies</p>
+                    <p>{{class.ArmorProf}}{{class.WeaponProf}}</p>
+                    <p class="md-title">Other Info</p>
+                    <p>Saving Throws: {{class.SavingThrows}}</p>
+                </md-card-content>
+            </div>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-icon-button md-primary" ng-click="class.IsShowMoreInfo = !class.IsShowMoreInfo">
+                    <md-icon>info</md-icon>
+                </md-button>
+                <md-button class="md-raised md-primary" ng-click="ChooseClassVC.ChooseClass(class)">
+                    Choose
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+    <div layout="column" flex-gt-sm="25">
+        <md-card ng-repeat="class in ChooseClassVC.Classes" ng-if="($index - 3) % 4 === 0">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-headline">{{class.Name}}</span>
+                    <span class="md-subhead">Hit Die: {{class.HitDie}}</span>
+                    <span class="md-subhead">Primary Ability: {{class.PrimaryAbility}}</span>
+                </md-card-header-text>
+            </md-card-header>
+            <img ng-src="{{class.ClassImage}}" class="md-card-image" alt="Class Image">
+            <div ng-if="class.IsShowMoreInfo">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-title">More Info</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>{{class.Description}}</p>
+                    <p class="md-title">Weapon and Armor Proficiencies</p>
+                    <p>{{class.ArmorProf}}{{class.WeaponProf}}</p>
+                    <p class="md-title">Other Info</p>
+                    <p>Saving Throws: {{class.SavingThrows}}</p>
+                </md-card-content>
+            </div>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-icon-button md-primary" ng-click="class.IsShowMoreInfo = !class.IsShowMoreInfo">
+                    <md-icon>info</md-icon>
+                </md-button>
+                <md-button class="md-raised md-primary" ng-click="ChooseClassVC.ChooseClass(class)">
+                    Choose
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</div>
