@@ -1,0 +1,59 @@
+﻿<md-dialog flex style="width:initial; height:initial;">
+    <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+            <h2 flex md-truncate>Choose your {{TraitPickerVC.Background.Name}} Traits</h2>
+            <md-button class="md-icon-button" ng-click="TraitPickerVC.Close()">
+                <md-icon>close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <div layout="column" layout-align="center center">
+            <md-input-container ng-if="TraitPickerVC.Trait.SpecialtyName" style="width:100%;">
+                <label>{{TraitPickerVC.Trait.SpecialtyName}}</label>
+                <md-select ng-model="TraitPickerVC.Background.Specialty">
+                    <md-option><em>None</em></md-option>
+                    <md-option ng-repeat="specialty in TraitPickerVC.Trait.Specialty" ng-value="specialty">
+                        {{specialty}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container style="width:100%;">
+                <label>Personality Trait</label>
+                <md-select ng-model="TraitPickerVC.Background.PersonalityTrait">
+                    <md-option><em>None</em></md-option>
+                    <md-option ng-repeat="trait in TraitPickerVC.Trait.Traits" ng-value="trait">
+                        {{trait}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container style="width:100%;">
+                <label>Ideal</label>
+                <md-select ng-model="TraitPickerVC.Background.Ideal">
+                    <md-option><em>None</em></md-option>
+                    <md-option ng-repeat="ideal in TraitPickerVC.Trait.Ideal" ng-value="ideal">
+                        {{ideal}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container style="width:100%;">
+                <label>Bond</label>
+                <md-select ng-model="TraitPickerVC.Background.Bond">
+                    <md-option><em>None</em></md-option>
+                    <md-option ng-repeat="bond in TraitPickerVC.Trait.Bond" ng-value="bond">
+                        {{bond}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button class="md-warn" ng-click="TraitPickerVC.Close()">
+            Cancel
+        </md-button>
+        <md-button class="md-primary md-raised" ng-click="TraitPickerVC.Submit()" ng-disabled="!TraitPickerVC.Background.Bond && !TraitPickerVC.Background.Ideal && !TraitPickerVC.Background.PersonalityTrait">
+            Submit
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

@@ -43,6 +43,16 @@
                     }
                 }
             })
+            .state("characterSheet.add.finalize", {
+                url: "/finalize",
+                views: {
+                    "content@characterSheet.add": {
+                        templateUrl: "app/apps/characterSheet/home/add/finalizeCharacter/finalizeCharacterView.html",
+                        controller: "FinalizeCharacterController",
+                        controllerAs: "FinalizeCharacterVC"
+                    }
+                }
+            })
             .state("characterSheet.add.characterStart", {
                 url: "/start",
                 views: {
@@ -50,6 +60,16 @@
                         templateUrl: "app/apps/characterSheet/home/add/characterStart/characterStartView.html",
                         controller: "CharacterStartController",
                         controllerAs: "CharacterStartVC"
+                    }
+                }
+            })
+            .state("characterSheet.add.chooseBackground", {
+                url: "/chooseBackground",
+                views: {
+                    "content@characterSheet.add": {
+                        templateUrl: "app/apps/characterSheet/home/add/chooseBackground/chooseBackgroundView.html",
+                        controller: "ChooseBackgroundController",
+                        controllerAs: "ChooseBackgroundVC"
                     }
                 }
             })

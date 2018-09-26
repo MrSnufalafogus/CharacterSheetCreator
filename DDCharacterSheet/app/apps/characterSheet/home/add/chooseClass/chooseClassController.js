@@ -16,12 +16,16 @@
 
         var emitter = $scope.$emit('title-change', {
             Title: "Choose your Class",
-            PercentComplete: 30,
+            PercentComplete: 50,
             Step: 3
         });
 
         if (!characterCreateHelper.getRace()) {
             $state.go("characterSheet.add.chooseRace");
+        }
+
+        if (characterCreateHelper.getClass()) {
+            $state.go("characterSheet.add.chooseBackground");
         }
 
         chooseClassC.ChooseClass = chooseClass;
@@ -165,7 +169,7 @@
 
         function chooseClass(inClass) {
             characterCreateHelper.setClass(inClass);
-            $state.go("characterSheet.add.chooseClass");
+            $state.go("characterSheet.add.chooseBackground");
         }
     }
 

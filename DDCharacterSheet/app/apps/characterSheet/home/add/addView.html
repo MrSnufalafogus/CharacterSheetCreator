@@ -1,12 +1,12 @@
-﻿<div md-whiteframe="4" style="background-color:white; border-radius:15px; margin:20px;" flex layout="column" layout-align="center start" layout-padding>
+﻿<md-card flex layout="column" layout-align="center start" layout-padding>
     <span class="md-headline">Step {{AddVC.AddConfig.Step}}: {{AddVC.AddConfig.Title}}</span>
     <md-progress-linear style="padding:0px;" md-mode="determinate" value="{{AddVC.AddConfig.PercentComplete}}"></md-progress-linear>
     <div layout="row" layout-align="space-between center" style="width:100%;">
-        <md-button class="md-icon-button">
-            
+        <md-button class="md-button md-primary md-raised" ng-click="AddVC.Back()" ng-hide="AddVC.AddConfig.Step === 1">
+            <md-icon>arrow_back</md-icon> Back
         </md-button>
         <span flex></span>
-        <div class="md-subhead" layout="row">{{AddVC.CharacterName}} is {{AddVC.AddConfig.PercentComplete|percentage}} Complete</div>
+        <div class="md-subhead" style="text-align:right;" layout="row">{{AddVC.CharacterName}} {{AddVC.RaceName}} {{AddVC.ClassName}} {{AddVC.BackgroundName}} is {{AddVC.AddConfig.PercentComplete|percentage}} Complete</div>
     </div>
-</div>
+</md-card>
 <md-content ui-view="content"></md-content>

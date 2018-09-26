@@ -1,69 +1,91 @@
-﻿<md-card layout="column" style="padding:15px;">
-    <p>Time to collect some base info for your character! If you aren't sure, don't worry, you can change it later!</p>
-    <md-input-container>
-        <label>Character Name</label>
-        <input type="text" ng-model="CharacterStartVC.CharacterInfo.Name" ng-change="CharacterStartVC.UpdateName(CharacterStartVC.CharacterInfo.Name)" ng-model-options="{ debounce: 250 }">
-    </md-input-container>
-    <div layout="row" layout-align="start center">
-        <md-input-container flex-gt-sm="10">
-            <label>Strength</label>
-            <input type="number" ng-model="CharacterStartVC.CharacterInfo.STR">
+﻿<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Welcome Adventurer!</span>
+            <span class="md-subhead" style="padding-top:5px;">Time to collect some base info for your character! If you aren't sure, don't worry, you can change it later!</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content flex layout="column">
+        <md-input-container style="margin-bottom:0px; margin-top:0px;">
+            <label>Character Name</label>
+            <input type="text" ng-model="CharacterStartVC.CharacterInfo.Name" ng-change="CharacterStartVC.UpdateName(CharacterStartVC.CharacterInfo.Name)" ng-model-options="{ debounce: 250 }">
         </md-input-container>
-        <md-button class="md-icon-button md-primary md-raised" ng-click="CharacterStartVC.Roll('STR')">
-            <md-tooltip md-direction="top">Randomize Strength</md-tooltip>
-            <md-icon>casino</md-icon>
-        </md-button>
-    </div>
-    <div layout="row" layout-align="start center">
-        <md-input-container flex-gt-sm="10">
-            <label>Dexterity</label>
-            <input type="number" ng-model="CharacterStartVC.CharacterInfo.DEX">
+        <md-input-container style="margin-bottom:15px; margin-top:0px;">
+            <md-select placeholder="Character Alignment" ng-model="CharacterStartVC.CharacterInfo.Alignment" style="min-width: 200px;">
+                <md-option ng-value="null">None</md-option>
+                <md-option ng-value="'LG'">Lawful Good</md-option>
+                <md-option ng-value="'NG'">Neutral Good</md-option>
+                <md-option ng-value="'CG'">Chaotic Good</md-option>
+                <md-option ng-value="'LN'">Lawful Neutral</md-option>
+                <md-option ng-value="'NN'">Neutral Neutral</md-option>
+                <md-option ng-value="'CN'">Chaotic Neutral</md-option>
+                <md-option ng-value="'LE'">Lawful Evil</md-option>
+                <md-option ng-value="'NE'">Neutral Evil</md-option>
+                <md-option ng-value="'CE'">Chaotic Evil</md-option>
+            </md-select>
         </md-input-container>
-        <md-button class="md-icon-button md-primary md-raised" ng-click="CharacterStartVC.Roll('DEX')">
-            <md-tooltip md-direction="top">Randomize Dexterity</md-tooltip>
-            <md-icon>casino</md-icon>
-        </md-button>
-    </div>
-    <div layout="row" layout-align="start center">
-        <md-input-container flex-gt-sm="10">
-            <label>Constitution</label>
-            <input type="number" ng-model="CharacterStartVC.CharacterInfo.CON">
-        </md-input-container>
-        <md-button class="md-icon-button md-primary md-raised" ng-click="CharacterStartVC.Roll('CON')">
-            <md-tooltip md-direction="top">Randomize Constitution</md-tooltip>
-            <md-icon>casino</md-icon>
-        </md-button>
-    </div>
-    <div layout="row" layout-align="start center">
-        <md-input-container flex-gt-sm="10">
-            <label>Wisdom</label>
-            <input type="number" ng-model="CharacterStartVC.CharacterInfo.WIS">
-        </md-input-container>
-        <md-button class="md-icon-button md-primary md-raised" ng-click="CharacterStartVC.Roll('WIS')">
-            <md-tooltip md-direction="top">Randomize Wisdom</md-tooltip>
-            <md-icon>casino</md-icon>
-        </md-button>
-    </div>
-    <div layout="row" layout-align="start center">
-        <md-input-container flex-gt-sm="10">
-            <label>Intelligence</label>
-            <input type="number" ng-model="CharacterStartVC.CharacterInfo.INT">
-        </md-input-container>
-        <md-button class="md-icon-button md-primary md-raised" ng-click="CharacterStartVC.Roll('INT')">
-            <md-tooltip md-direction="top">Randomize Intelligence</md-tooltip>
-            <md-icon>casino</md-icon>
-        </md-button>
-    </div>
-    <div layout="row" layout-align="start center">
-        <md-input-container flex-gt-sm="10">
-            <label>Charisma</label>
-            <input type="number" ng-model="CharacterStartVC.CharacterInfo.CHA">
-        </md-input-container>
-        <md-button class="md-icon-button md-primary md-raised" ng-click="CharacterStartVC.Roll('CHA')">
-            <md-tooltip md-direction="top">Randomize Charisma</md-tooltip>
-            <md-icon>casino</md-icon>
-        </md-button>
-    </div>
+        <span class="md-subhead">Enter your pre-rolled stats. Don't worry if you haven't rolled yet, we can for you!</span>
+        <div layout="row" layout-align="start center">
+            <md-input-container flex-gt-sm="10" style="margin-bottom:0px;">
+                <label>Strength</label>
+                <input type="number" ng-model="CharacterStartVC.CharacterInfo.STR">
+            </md-input-container>
+            <md-button class="md-icon-button md-primary md-raised" ng-click="CharacterStartVC.Roll('STR')">
+                <md-tooltip md-direction="top">Randomize Strength</md-tooltip>
+                <md-icon>casino</md-icon>
+            </md-button>
+        </div>
+        <div layout="row" layout-align="start center">
+            <md-input-container flex-gt-sm="10" style="margin-bottom:0px;">
+                <label>Dexterity</label>
+                <input type="number" ng-model="CharacterStartVC.CharacterInfo.DEX">
+            </md-input-container>
+            <md-button class="md-icon-button md-primary md-raised" ng-click="CharacterStartVC.Roll('DEX')">
+                <md-tooltip md-direction="top">Randomize Dexterity</md-tooltip>
+                <md-icon>casino</md-icon>
+            </md-button>
+        </div>
+        <div layout="row" layout-align="start center">
+            <md-input-container flex-gt-sm="10" style="margin-bottom:0px;">
+                <label>Constitution</label>
+                <input type="number" ng-model="CharacterStartVC.CharacterInfo.CON">
+            </md-input-container>
+            <md-button class="md-icon-button md-primary md-raised" ng-click="CharacterStartVC.Roll('CON')">
+                <md-tooltip md-direction="top">Randomize Constitution</md-tooltip>
+                <md-icon>casino</md-icon>
+            </md-button>
+        </div>
+        <div layout="row" layout-align="start center">
+            <md-input-container flex-gt-sm="10" style="margin-bottom:0px;">
+                <label>Wisdom</label>
+                <input type="number" ng-model="CharacterStartVC.CharacterInfo.WIS">
+            </md-input-container>
+            <md-button class="md-icon-button md-primary md-raised" ng-click="CharacterStartVC.Roll('WIS')">
+                <md-tooltip md-direction="top">Randomize Wisdom</md-tooltip>
+                <md-icon>casino</md-icon>
+            </md-button>
+        </div>
+        <div layout="row" layout-align="start center">
+            <md-input-container flex-gt-sm="10" style="margin-bottom:0px;">
+                <label>Intelligence</label>
+                <input type="number" ng-model="CharacterStartVC.CharacterInfo.INT">
+            </md-input-container>
+            <md-button class="md-icon-button md-primary md-raised" ng-click="CharacterStartVC.Roll('INT')">
+                <md-tooltip md-direction="top">Randomize Intelligence</md-tooltip>
+                <md-icon>casino</md-icon>
+            </md-button>
+        </div>
+        <div layout="row" layout-align="start center">
+            <md-input-container flex-gt-sm="10" style="margin-bottom:0px;">
+                <label>Charisma</label>
+                <input type="number" ng-model="CharacterStartVC.CharacterInfo.CHA">
+            </md-input-container>
+            <md-button class="md-icon-button md-primary md-raised" ng-click="CharacterStartVC.Roll('CHA')">
+                <md-tooltip md-direction="top">Randomize Charisma</md-tooltip>
+                <md-icon>casino</md-icon>
+            </md-button>
+        </div>
+    </md-card-content>
     <md-card-actions layout="row" layout-align="end center">
         <md-button class="md-primary md-raised" ng-click="CharacterStartVC.Next()" ng-disabled="!CharacterStartVC.CharacterInfo.Name">
             Next

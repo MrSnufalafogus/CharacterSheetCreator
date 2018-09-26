@@ -14,6 +14,7 @@
         characterCreateC.char = null;
         characterCreateC.race = null;
         characterCreateC.class = null;
+        characterCreateC.background = null;
 
         function setRace(inRace) {
             characterCreateC.race = inRace;
@@ -25,6 +26,14 @@
 
         function setChar(inChar) {
             characterCreateC.char = inChar;
+        }
+
+        function setBackground(inBackground) {
+            characterCreateC.background = inBackground;
+        }
+
+        function getBackground() {
+            return characterCreateC.background;
         }
 
         function getRace() {
@@ -59,12 +68,14 @@
             setRace: setRace,
             setChar: setChar,
             setName: setName,
+            setBackground: setBackground,
 
             //Getters
             getRace: getRace,
             getClass: getClass,
             getChar: getChar,
-            getCharName: getCharName
+            getCharName: getCharName,
+            getBackground: getBackground
 
             //Processes
         };

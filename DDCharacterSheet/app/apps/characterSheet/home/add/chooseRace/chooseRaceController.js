@@ -16,12 +16,16 @@
 
         var emitter = $scope.$emit('title-change', {
             Title: "Choose your Race",
-            PercentComplete: 20,
+            PercentComplete: 35,
             Step: 2
         });
 
         if (!characterCreateHelper.getChar()) {
             $state.go("characterSheet.add.characterStart");
+        }
+
+        if (characterCreateHelper.getRace()) {
+            $state.go("characterSheet.add.chooseClass");
         }
 
         chooseRaceC.Races = [
@@ -33,6 +37,7 @@
                 ASIncrease: [
                     {
                         Type: "Constitution",
+                        Code: "CON",
                         Amount: 2
                     }
                 ],
@@ -50,6 +55,7 @@
                 ASIncrease: [
                     {
                         Type: "Dexterity",
+                        Code: "DEX",
                         Amount: 2
                     }
                 ],
@@ -67,6 +73,7 @@
                 ASIncrease: [
                     {
                         Type: "Dexterity",
+                        Code: "DEX",
                         Amount: 2
                     }
                 ],
@@ -84,26 +91,32 @@
                 ASIncrease: [
                     {
                         Type: "Consitution",
+                        Code: "CON",
                         Amount: 1
                     },
                     {
                         Type: "Dexterity",
+                        Code: "DEX",
                         Amount: 1
                     },
                     {
                         Type: "Strength",
+                        Code: "STR",
                         Amount: 1
                     },
                     {
                         Type: "Wisdom",
+                        Code: "WIS",
                         Amount: 1
                     },
                     {
                         Type: "Intelligence",
+                        Code: "INT",
                         Amount: 1
                     },
                     {
                         Type: "Charisma",
+                        Code: "CHA",
                         Amount: 1
                     }
                 ],
@@ -120,10 +133,12 @@
                 ASIncrease: [
                     {
                         Type: "Strength",
+                        Code: "STR",
                         Amount: 2
                     },
                     {
                         Type: "Charisma",
+                        Code: "CHA",
                         Amount: 1
                     }
                 ],
@@ -140,6 +155,7 @@
                 ASIncrease: [
                     {
                         Type: "Intelligence",
+                        Code: "INT",
                         Amount: 2
                     }
                 ],
@@ -157,10 +173,12 @@
                 ASIncrease: [
                     {
                         Type: "Charisma",
+                        Code: "CHA",
                         Amount: 2
                     },
                     {
                         Type: "2 Extras",
+                        Code: "EXT",
                         Amount: 1
                     }
                 ],
@@ -177,10 +195,12 @@
                 ASIncrease: [
                     {
                         Type: "Strength",
+                        Code: "STR",
                         Amount: 2
                     },
                     {
                         Type: "Constitution",
+                        Code: "CON",
                         Amount: 1
                     }
                 ],
@@ -197,10 +217,12 @@
                 ASIncrease: [
                     {
                         Type: "Intelligence",
+                        Code: "INT",
                         Amount: 1
                     },
                     {
                         Type: "Charisma",
+                        Code: "CHA",
                         Amount: 2
                     }
                 ],

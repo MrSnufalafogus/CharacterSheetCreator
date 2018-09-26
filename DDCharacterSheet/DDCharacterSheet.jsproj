@@ -79,15 +79,6 @@
     <Content Include="Content\angular-material.layouts.ie_fixes.css" />
     <Content Include="Content\angular-material.layouts.min.css" />
     <Content Include="Content\angular-material.min.css" />
-    <Content Include="gulpfile.js" />
-    <Content Include="gulpScripts\appClean.js" />
-    <Content Include="gulpScripts\appConcat.js" />
-    <Content Include="gulpScripts\appCopyFiles.js" />
-    <Content Include="gulpScripts\appFileInjection.js" />
-    <Content Include="gulpScripts\appLint.js" />
-    <Content Include="gulpScripts\appMoveAndRenameIndex.js" />
-    <Content Include="gulpScripts\appScriptsMinify.js" />
-    <Content Include="gulpScripts\appTasks.js" />
     <Content Include="index.html" />
     <Content Include="images\LockScreenLogo.scale-200.png" />
     <Content Include="images\SplashScreen.scale-200.png" />

@@ -27,8 +27,13 @@
             CON: 0,
             WIS: 0,
             INT: 0,
-            CHA: 0
+            CHA: 0,
+            Alignment: null
         };
+
+        if (characterCreateHelper.getChar()) {
+            $state.go("characterSheet.add.chooseRace");
+        }
 
         startC.Next = next;
         startC.UpdateName = updateName;
@@ -66,6 +71,9 @@
             }
             if (startC.CharacterInfo.CHA === 0) {
                 roll("CHA");
+            }
+            if (!startC.CharacterInfo.Alignment) {
+                startC.CharacterInfo.Alignment = "NN";
             }
             characterCreateHelper.setChar(startC.CharacterInfo);
             $state.go("characterSheet.add.chooseRace");
