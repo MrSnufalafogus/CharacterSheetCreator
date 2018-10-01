@@ -35,11 +35,6 @@ namespace CharacterSheetWebAPI.Logic
                         {
                             returnValue = new AccessToken();
 
-                            if (reader["AccessKeyID"] is Guid)
-                            {
-                                returnValue.AccessKeyID = (Guid)reader["AccessKeyID"];
-                            }
-
                             if (reader["AccessTokenID"] is Guid)
                             {
                                 returnValue.AccessTokenID = (Guid)reader["AccessTokenID"];
@@ -154,12 +149,6 @@ namespace CharacterSheetWebAPI.Logic
                         if (await reader.ReadAsync() == true)
                         {
                             returnValue = new AccessToken();
-
-                            ordinal = reader.GetOrdinal("AccessKeyID");
-                            if (reader.IsDBNull(ordinal) == false)
-                            {
-                                returnValue.AccessKeyID = reader.GetFieldValue<Guid>(ordinal);
-                            }
 
                             ordinal = reader.GetOrdinal("AccessTokenID");
                             if (reader.IsDBNull(ordinal) == false)

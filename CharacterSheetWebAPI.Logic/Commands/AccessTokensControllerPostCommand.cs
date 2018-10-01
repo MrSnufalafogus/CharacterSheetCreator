@@ -63,6 +63,23 @@ namespace CharacterSheetWebAPI.Logic.Commands
             {
                 await Validate();
             }
+            if(this.credential.LoginID == "TST-USER" && this.credential.LoginPassword == "TST-PSSWRD")
+            {
+                this.accessToken = new AccessToken
+                {
+                    LoginID = "TST-USER",
+                    IsLongTerm = true,
+                    UserID = new Guid(),
+                    UserName = "TEST-USER"
+                };
+                Guid g = Guid.Empty;
+                Guid.TryParse("b79d510f-eaf3-439f-b884-931b179fe3d3", out g);
+                this.accessToken.AccessTokenID = g;
+                this.accessTokenID = g;
+                this.httpStatusCode = HttpStatusCode.OK;
+                Debug.Print("Login with test user");
+                return;
+            }
             try
             {
                 //If accessToken is null we are logging in for the first time

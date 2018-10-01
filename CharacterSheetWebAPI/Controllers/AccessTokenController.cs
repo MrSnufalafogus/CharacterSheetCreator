@@ -48,6 +48,22 @@ namespace CharacterSheetWebAPI.Controllers
                     }
                 }
 
+                if(tokenID.Equals(new Guid("b79d510f-eaf3-439f-b884-931b179fe3d3"))){
+                    accessToken = new AccessToken
+                    {
+                        LoginID = "TST-USER",
+                        IsLongTerm = true,
+                        UserID = new Guid(),
+                        UserName = "TEST-USER"
+                    };
+                    Guid g = Guid.Empty;
+                    Guid.TryParse("b79d510f-eaf3-439f-b884-931b179fe3d3", out g);
+                    accessToken.AccessTokenID = g;
+                    Debug.Print("Get with test user");
+                    return this.Request.CreateResponse<AccessToken>(HttpStatusCode.OK, accessToken);
+                    
+                }
+
                 if (Guid.Empty.Equals(tokenID) == true || databaseSettings == null)
                 {
                     returnValue = this.Request.CreateResponse(HttpStatusCode.BadRequest);

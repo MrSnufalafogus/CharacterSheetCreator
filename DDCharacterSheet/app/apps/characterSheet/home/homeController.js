@@ -21,13 +21,11 @@
         var watcher = $scope.$watch(function () {
             return $state.$current.name;
         }, function (newVal, oldVal) {
-            if (newVal !== oldVal) {
-                accessTokenService.checkIfCurrentTokenLogin().then(function (response) {
-
-                }, function (response) {
-                    $state.go("login");
-                });
-            }
+            accessTokenService.checkIfCurrentTokenLogin().then(function (response) {
+                //Do nothing
+            }, function (response) {
+                $state.go("login");
+            });
         });
 
         return homeC;

@@ -10,12 +10,6 @@ namespace CharacterSheetWebAPI.Contracts
     {
 
         [DataMember(EmitDefaultValue = false)]
-        public Guid AccessKeyID
-        {
-            get; set;
-        }
-
-        [DataMember(EmitDefaultValue = false)]
         public Guid AccessTokenID
         {
             get; set;
@@ -65,7 +59,6 @@ namespace CharacterSheetWebAPI.Contracts
 
         public void Update(AccessToken other)
         {
-            this.AccessKeyID = other.AccessKeyID;
             this.AccessTokenID = other.AccessTokenID;
             this.AuthenticationID = other.AuthenticationID;
             this.LastAccessDateTime = other.LastAccessDateTime;
@@ -80,10 +73,6 @@ namespace CharacterSheetWebAPI.Contracts
             returnValue.Append("@");
             returnValue.Append(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name);
             returnValue.Append(" : {");
-
-            returnValue.Append("\"AccessKeyID\" : ");
-            returnValue.Append(this.AccessKeyID == null ? "null" : "\"" + this.AccessKeyID + "\"");
-            returnValue.Append(", ");
 
             returnValue.Append("\"AccessTokenID\" : ");
             returnValue.Append(this.AccessTokenID == null ? "null" : "\"" + this.AccessTokenID + "\"");

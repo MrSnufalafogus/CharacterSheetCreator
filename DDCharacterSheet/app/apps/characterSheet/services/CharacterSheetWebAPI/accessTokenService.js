@@ -51,10 +51,10 @@
             var url = authenticationSettings.serverPath + "api/AccessTokens";
             var token = authenticationHelper.getAccessToken();
             var item = {
-                AccessKeyID: token ? token.AccessKeyID : void 0,
                 LoginID: loginUsername,
                 LoginPassword: loginPassword,
-                IsLongTerm: isLongTerm
+                IsLongTerm: isLongTerm,
+                AccessTokenID: token ? token.AccessTokenID : null
             };
 
             var req = {
@@ -82,7 +82,7 @@
                 headers: {
                     "Content-Type": "application/json; charset=utf-8",
                     "Accept": "application/json",
-                    "X-EGEN-AccessTokenID": authenticationHelper.getAccessTokenIDForAPI()
+                    "AccessTokenID": authenticationHelper.getAccessTokenIDForAPI()
                 },
                 data: item
             };
