@@ -3,15 +3,33 @@
 
     angular
         .module("CharacterSheetApp")
-        .config(["$stateProvider", "$urlRouterProvider", characterSheetConfig]);
+        .config(["$stateProvider", "$urlRouterProvider", characterSheetConfig])
+        .factory("httpRequestInterceptor", httpRequestInterceptor)
+        .config(["$httpProvider", function ($httpProvider) {
+            $httpProvider.interceptors.push("httpRequestInterceptor");
+        }]);
 
     // Config
     function characterSheetConfig($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/characterSheet/characters');
+        $urlRouterProvider.otherwise('/login');
 
         $stateProvider
-            // Home Layout
+
+            //////////////////
+            // Login Layout //
+            //////////////////
+            .state("login", {
+                url: "/login",
+                templateUrl: "app/apps/characterSheet/login/loginView.html",
+                controller: "LoginController",
+                controllerAs: "LoginVC"
+            })
+
+            /////////////////
+            // Home Layout //
+            /////////////////
+
             .state("characterSheet", {
                 url: "/characterSheet",
                 templateUrl: "app/apps/characterSheet/home/homeView.html",
@@ -108,6 +126,65 @@
                     }
                 }
             });
+    }
+
+    // Injected Services
+    httpRequestInterceptor.$inject = ["$rootScope", "$q", "$injector"];
+
+    // Factory
+    function httpRequestInterceptor($rootScope, $q, $injector) {
+
+        // $mdToast workaround
+        // there is a circular dependency on $mdToast, because it requires $http for some bizarre reason, so we have to do it this way
+        var toastr;
+        function getToaster() {
+            if (!toastr) {
+                toastr = $injector.get("$mdToast");
+            }
+            return toastr;
+        }
+
+        // Return
+        return {
+            // Request
+            request: function (config) {
+                if (config.headers["AccessTokenID"]) {
+                    if (!config.headers["IgnoreLoadingBar"]) {
+                        $rootScope.ActiveLoadingCount += 1;
+                    }
+                }
+                return config;
+            },
+            // Request Error
+            requestError: function (rejection) {
+                if (rejection.config.headers["AccessTokenID"]) {
+                    if (!rejection.config.headers["IgnoreLoadingBar"]) {
+                        $rootScope.ActiveLoadingCount -= 1;
+                    }
+                }
+                return $q.reject(rejection);
+            },
+            // Response
+            response: function (response) {
+                if (response.config.headers["AccessTokenID"]) {
+                    if (!response.config.headers["IgnoreLoadingBar"]) {
+                        $rootScope.ActiveLoadingCount -= 1;
+                    }
+                }
+                return response;
+            },
+            // Response Error
+            responseError: function (rejection) {
+                console.log(rejection);
+                if (rejection.config.headers["AccessTokenID"]) {
+                    if (!rejection.config.headers["IgnoreLoadingBar"]) {
+                        $rootScope.ActiveLoadingCount -= 1;
+                    }
+                }
+                return $q.reject(rejection);
+            }
+        };
+
     }
 
 })();

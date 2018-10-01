@@ -23,12 +23,17 @@
     <script src="Scripts/angular-messages.js"></script>
     <script src="Scripts/angular-material.js"></script>
 
+
+
     <!--App Scripts-->
     <script src="app/apps/characterSheet/characterSheetApp.js"></script>
     <script src="app/apps/characterSheet/characterSheetApp.config.js"></script>
     <!--Factories-->
+    <script src="app/apps/characterSheet/helpers/authenticationHelper.js"></script>
     <script src="app/apps/characterSheet/helpers/characterCreateHelper.js"></script>
     <script src="app/apps/characterSheet/helpers/traitHelper.js"></script>
+    <!--Login Scripts-->
+    <script src="app/apps/characterSheet/login/loginController.js"></script>
     <!--Controllers-->
     <script src="app/apps/characterSheet/home/homeController.js"></script>
     <script src="app/apps/characterSheet/home/settings/settingsController.js"></script>
@@ -39,11 +44,12 @@
     <script src="app/apps/characterSheet/home/add/chooseRace/chooseRaceController.js"></script>
     <script src="app/apps/characterSheet/home/add/chooseBackground/chooseBackgroundController.js"></script>
     <script src="app/apps/characterSheet/home/add/finalizeCharacter/finalizeCharacterController.js"></script>
-
     <!--Dialog Controllers-->
     <script src="app/apps/characterSheet/home/add/chooseBackground/traitPicker/traitPickerController.js"></script>
+    <!--Services-->
+    <script src="app/apps/characterSheet/services/CharacterSheetWebAPI/accessTokenService.js"></script>
 </head>
 <body>
-  <md-content ui-view layout="row" style="height:100%; width:100%;"></md-content>
+    <md-content ui-view layout="row" style="height:100%; width:100%;"></md-content>
 </body>
 </html>

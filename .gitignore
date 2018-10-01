@@ -2,3 +2,10 @@ DDCharacterSheet/bin/Debug/AppxManifest.xml
 DDCharacterSheet/bin/
 DDCharacterSheet/bld/
 .vs/
+CharacterSheetWebAPI.Contracts/obj/Debug/CharacterSheetWebAPI.Contracts.csproj.FileListAbsolute.txt
+CharacterSheetWebAPI.Contracts/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+CharacterSheetWebAPI.Contracts/obj/Debug/
+CharacterSheetWebAPI.Logic/obj/
+CharacterSheetWebAPI/bin/
+CharacterSheetWebAPI/obj/
+packages/

@@ -15,7 +15,6 @@
         var finalizeC = this;
 
         if (!characterCreateHelper.getBackground()) {
-            console.log("here");
             $state.go("characterSheet.add.chooseBackground");
         }
         else {
