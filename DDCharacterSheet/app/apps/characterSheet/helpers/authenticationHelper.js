@@ -9,7 +9,6 @@
             serverPath: function () {
                 var url = null;
                 return (url === null ? "http://localhost/" : url) + "CharacterSheetWebAPI/";
-                //return localStorage.getItem("eGenIndexJSOptions.apiURL") + "/eGenuityWebAPI/";
             }()
         });
 
@@ -28,16 +27,6 @@
 
         // Service Storage Variables
         var accessToken = null;
-
-        // Service Placeholders
-        var accessTokenService;
-        var sessionProfileService;
-        var webUserPreferencesService;
-        var authenticationService;
-        var customerService;
-        var userProfilesService;
-        var mdToastService;
-        var eGenHttpHelperService;
 
         ///////////////
         // Functions //
