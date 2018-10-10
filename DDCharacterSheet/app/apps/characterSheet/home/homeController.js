@@ -6,10 +6,10 @@
         .controller("HomeController", HomeController);
 
     //Injected Dependencies
-    HomeController.$inject = ["$scope", "$state", "$mdToast", "$mdMedia", "$mdSidenav", "accessTokenService"];
+    HomeController.$inject = ["$scope", "$state", "$mdToast", "$mdMedia", "$mdSidenav", "accessTokenService", "authenticationHelper"];
 
     // Controller
-    function HomeController($scope, $state, $mdToast, $mdMedia, $mdSidenav, accessTokenService) {
+    function HomeController($scope, $state, $mdToast, $mdMedia, $mdSidenav, accessTokenService, authenticationHelper) {
         /* jshint validthis:true */
 
         var homeC = this;
@@ -18,9 +18,7 @@
 
         homeC.ToggleSideNav = toggleSideNav;
 
-        var watcher = $scope.$watch(function () {
-            return $state.$current.name;
-        }, function (newVal, oldVal) {
+        var watcher = $scope.$watch($state.$current.name, function (newVal, oldVal) {
             accessTokenService.checkIfCurrentTokenLogin().then(function (response) {
                 //Do nothing
             }, function (response) {
