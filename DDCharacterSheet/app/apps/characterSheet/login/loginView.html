@@ -1,3 +1,25 @@
-﻿<md-button class="md-primary md-raised" ng-click="LoginVC.Login('TST-USER', 'TST-PSSWRD', true)">
-    Login
-</md-button>
+<div layout = "column" flex>
+  <md-toolbar>
+    <div class = "md-toolbar-tools">
+      <h2> D&D Character Creator Login</h2>
+    </div>
+  </md-toolbar>
+  <div layout = "column" layout-align = "center center">
+    <md-whiteframe class = "md-whiteframe-3dp md-margin md-padding">
+      <div layout = "column" layout-align = "center center">
+        <md-input-container>
+          <label> Username</label>
+          <input ng-model = "LoginVC.LoginInfo.Username" ng-change = "LoginVC.Update(LoginVC.LoginInfo.Username)">
+        </md-input-container>
+        <md-input-container>
+          <label> Password</label>
+          <input type = "password">
+        </md-input-container>
+        <md-button class="md-primary md-raised" ng-click="LoginVC.Login('TST-USER', 'TST-PSSWRD', true)">
+            Login
+        </md-button>
+        <md-button class = "md-primary md-raised"> Sign Up</md-button>
+      </div>
+    </md-whiteframe>
+  </div>
+</div>

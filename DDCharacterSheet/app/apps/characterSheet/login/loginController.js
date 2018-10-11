@@ -9,14 +9,22 @@
     LoginController.$inject = ["$scope", "$state", "$mdToast", "accessTokenService", "authenticationHelper"];
 
     // Controller
-    function LoginController($scope, $state, $mdToast, accessTokenService, authenticationHelper) {
-        /* jshint validthis:true */
+    function LoginController($scope, $state, $mdToast, accessTokenService, authenticationHelper){
+      //Declaring fields
+      var logicC = this;
 
-        var logicC = this;
+      logicC.LoginInfo = {
+        Username: "",
+        Password: ""
+      };
 
-        logicC.Login = login;
+      logicC.Update = update;
 
-        return logicC;
+      return logicC;
+
+      function update(value){
+        console.log(value);
+      }
 
         function login(userName, passWord, isLongTerm) {
             accessTokenService.accessTokensLogin(userName, passWord, isLongTerm).then(function (response) {
