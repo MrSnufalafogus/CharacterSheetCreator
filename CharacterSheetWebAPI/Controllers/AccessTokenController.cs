@@ -27,50 +27,33 @@ namespace CharacterSheetWebAPI.Controllers
             [Route("api/AccessTokens/{accessTokenID}")]
             [HttpGet]
             [ResponseType(typeof(AccessToken))]
-            public async Task<HttpResponseMessage> Get(string accessTokenID)
+            public async Task<HttpResponseMessage> Get(Guid accessTokenID)
             {
                 HttpResponseMessage returnValue = null;
                 AccessToken accessToken = null;
-                IEnumerable<string> apiTokenHeaderValues = null;
                 DatabaseSettings databaseSettings = new DatabaseSettings();
-                Guid tokenID = Guid.Empty;
 
-                if (Guid.Empty.Equals(tokenID) == true)
-                {
-                    if (this.Request.Headers.TryGetValues("AccessTokenID", out apiTokenHeaderValues))
-                    {
-                        Guid g;
-                        if (Guid.TryParse(apiTokenHeaderValues.First(), out g) == true)
-                        {
-                            tokenID = g;
-                            Debug.Print("[AccessTokensController.Get] Access Token from Header = " + tokenID.ToString());
-                        }
-                    }
-                }
-
-                if(tokenID.Equals(new Guid("b79d510f-eaf3-439f-b884-931b179fe3d3"))){
+                if(accessTokenID.Equals(new Guid("b79d510f-eaf3-439f-b884-931b179fe3d3"))){
                     accessToken = new AccessToken
                     {
                         LoginID = "TST-USER",
                         IsLongTerm = true,
                         UserID = new Guid(),
-                        UserName = "TEST-USER"
+                        UserName = "TEST-USER",
+                        AccessTokenID = accessTokenID
                     };
-                    Guid g = Guid.Empty;
-                    Guid.TryParse("b79d510f-eaf3-439f-b884-931b179fe3d3", out g);
-                    accessToken.AccessTokenID = g;
                     Debug.Print("Get with test user");
                     return this.Request.CreateResponse<AccessToken>(HttpStatusCode.OK, accessToken);
                     
                 }
 
-                if (Guid.Empty.Equals(tokenID) == true || databaseSettings == null)
+                if (Guid.Empty.Equals(accessTokenID) == true || databaseSettings == null)
                 {
                     returnValue = this.Request.CreateResponse(HttpStatusCode.BadRequest);
                 }
                 else
                 {
-                    accessToken = await AccessTokenLogic.GetAccessTokenAsync(databaseSettings, tokenID);
+                    accessToken = await AccessTokenLogic.GetAccessTokenAsync(databaseSettings, accessTokenID);
                     Debug.Print("[AccessTokensController.Get] Access Token Loaded = " + (accessToken == null ? "null" : accessToken.ToString()));
 
                     if (accessToken == null)

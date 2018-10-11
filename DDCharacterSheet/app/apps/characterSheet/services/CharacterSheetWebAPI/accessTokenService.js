@@ -31,8 +31,8 @@
             return $http(req);
         };
 
-        var checkIfCurrentTokenLogin = function (accessTokenID) {
-            var token = JSON.parse(sessionStorage.getItem("CC.AccessToken"));
+        var checkIfCurrentTokenLogin = function () {
+            var token = JSON.parse(localStorage.getItem("CC.AccessToken"));
             var url = authenticationSettings.serverPath + "api/AccessTokens/" + token.AccessTokenID;
 
             var req = {
