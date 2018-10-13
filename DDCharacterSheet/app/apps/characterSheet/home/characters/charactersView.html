@@ -1,35 +1,32 @@
-﻿<md-button ng-click="CharactersVC.AddCharacter()" class="md-fab md-primary md-raised" style="position:fixed; bottom:0px; right:15px;">  
+﻿<md-button ng-click="CharactersVC.AddCharacter()" class="md-fab md-primary md-raised" style="position:fixed; bottom:0px; right:15px;">
     <md-icon>add</md-icon>
 </md-button>
-<div layout-gt-sm="row" style="padding:15px;">
+<div layout-gt-sm="row" style="padding:15px;" ng-if="CharactersVC.Characters.length > 0">
     <div layout="column" flex-gt-sm="25">
-        <md-card ng-repeat="character in CharactersVC.Characters" ng-if="($index - 0) % 4 === 0" >
+        <md-card ng-repeat="character in CharactersVC.Characters" ng-if="($index - 0) % 4 === 0">
             <md-card-header>
                 <md-card-header-text>
-                    <span class="md-title">{{character.Name}}</span>
-                    <span class="md-subhead">{{character.ClassName}} - {{character.RaceName}}</span>
+                    <span class="md-title">{{character.Char.Name}}</span>
+                    <span class="md-subhead">{{character.Class.Name}} - {{character.Race.Name}}</span>
                 </md-card-header-text>
             </md-card-header>
-            <img ng-src="{{character.ClassImage}}" class="md-card-image" alt="Class Image">
+            <img ng-src="{{character.Info.ImageURL}}" class="md-card-image" alt="Character Image">
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">Biography</span>
                 </md-card-title-text>
             </md-card-title>
             <md-card-content>
-                <p>{{character.Biography}}</p>
+                <p>{{character.Info.Biography}}</p>
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button class="md-icon-button md-primary">
                     <md-icon>play_circle_filled</md-icon>
                 </md-button>
                 <md-button class="md-icon-button md-primary">
-                    <md-icon>edit</md-icon>
-                </md-button>
-                <md-button class="md-icon-button md-primary">
                     <md-icon>share</md-icon>
                 </md-button>
-                <md-button class="md-icon-button md-warn">
+                <md-button ng-click="CharactersVC.Delete($index)" class="md-icon-button md-warn">
                     <md-icon>delete</md-icon>
                 </md-button>
             </md-card-actions>
@@ -39,25 +36,22 @@
         <md-card ng-repeat="character in CharactersVC.Characters" ng-if="($index - 1) % 4 === 0">
             <md-card-header>
                 <md-card-header-text>
-                    <span class="md-title">{{character.Name}}</span>
-                    <span class="md-subhead">{{character.ClassName}} - {{character.RaceName}}</span>
+                    <span class="md-title">{{character.Char.Name}}</span>
+                    <span class="md-subhead">{{character.Class.Name}} - {{character.Race.Name}}</span>
                 </md-card-header-text>
             </md-card-header>
-            <img ng-src="{{character.ClassImage}}" class="md-card-image" alt="Class Image">
+            <img ng-src="{{character.Info.ImageURL}}" class="md-card-image" alt="Character Image">
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">Biography</span>
                 </md-card-title-text>
             </md-card-title>
             <md-card-content>
-                <p>{{character.Biography}}</p>
+                <p>{{character.Info.Biography}}</p>
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button class="md-icon-button md-primary">
                     <md-icon>play_circle_filled</md-icon>
-                </md-button>
-                <md-button class="md-icon-button md-primary">
-                    <md-icon>edit</md-icon>
                 </md-button>
                 <md-button class="md-icon-button md-primary">
                     <md-icon>share</md-icon>
@@ -72,25 +66,22 @@
         <md-card ng-repeat="character in CharactersVC.Characters" ng-if="($index - 2) % 4 === 0">
             <md-card-header>
                 <md-card-header-text>
-                    <span class="md-title">{{character.Name}}</span>
-                    <span class="md-subhead">{{character.ClassName}} - {{character.RaceName}}</span>
+                    <span class="md-title">{{character.Char.Name}}</span>
+                    <span class="md-subhead">{{character.Class.Name}} - {{character.Race.Name}}</span>
                 </md-card-header-text>
             </md-card-header>
-            <img ng-src="{{character.ClassImage}}" class="md-card-image" alt="Class Image">
+            <img ng-src="{{character.Info.ImageURL}}" class="md-card-image" alt="Character Image">
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">Biography</span>
                 </md-card-title-text>
             </md-card-title>
             <md-card-content>
-                <p>{{character.Biography}}</p>
+                <p>{{character.Info.Biography}}</p>
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button class="md-icon-button md-primary">
                     <md-icon>play_circle_filled</md-icon>
-                </md-button>
-                <md-button class="md-icon-button md-primary">
-                    <md-icon>edit</md-icon>
                 </md-button>
                 <md-button class="md-icon-button md-primary">
                     <md-icon>share</md-icon>
@@ -105,25 +96,22 @@
         <md-card ng-repeat="character in CharactersVC.Characters" ng-if="($index - 3) % 4 === 0">
             <md-card-header>
                 <md-card-header-text>
-                    <span class="md-title">{{character.Name}}</span>
-                    <span class="md-subhead">{{character.ClassName}} - {{character.RaceName}}</span>
+                    <span class="md-title">{{character.Char.Name}}</span>
+                    <span class="md-subhead">{{character.Class.Name}} - {{character.Race.Name}}</span>
                 </md-card-header-text>
             </md-card-header>
-            <img ng-src="{{character.ClassImage}}" class="md-card-image" alt="Class Image">
+            <img ng-src="{{character.Info.ImageURL}}" class="md-card-image" alt="Character Image">
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">Biography</span>
                 </md-card-title-text>
             </md-card-title>
             <md-card-content>
-                <p>{{character.Biography}}</p>
+                <p>{{character.Info.Biography}}</p>
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button class="md-icon-button md-primary">
                     <md-icon>play_circle_filled</md-icon>
-                </md-button>
-                <md-button class="md-icon-button md-primary">
-                    <md-icon>edit</md-icon>
                 </md-button>
                 <md-button class="md-icon-button md-primary">
                     <md-icon>share</md-icon>
@@ -134,4 +122,7 @@
             </md-card-actions>
         </md-card>
     </div>
+</div>
+<div layout-gt-sm="row" layout-align="center center" style="padding:15px;" ng-if="CharactersVC.Characters.length === 0">
+    <h2 style="text-align:center;">You don't have any characters! Create one by pressing the add button below!</h2>
 </div>

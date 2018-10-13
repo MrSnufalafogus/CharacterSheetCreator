@@ -2,17 +2,42 @@
     <md-card-title>
         <md-card-title-text>
             <span class="md-headline">Finalizing {{FinalizeCharacterVC.CharacterName}}</span>
-            <span class="md-subhead">Large</span>
+            <span class="md-subhead">We just need a little more info...</span>
         </md-card-title-text>
-        <md-card-title-media>
-            <div class="md-media-lg card-media"></div>
-        </md-card-title-media>
     </md-card-title>
     <md-card-content>
-
+        <md-input-container style="width:90%">
+            <label>Image URL</label>
+            <input ng-model="FinalizeCharacterVC.CharacterInfo.ImageURL">
+        </md-input-container>
+        <div layout="row">
+            <md-input-container>
+                <label>Eye Color</label>
+                <input ng-model="FinalizeCharacterVC.CharacterInfo.EyeColor">
+            </md-input-container>
+            <md-input-container>
+                <label>Hair Color</label>
+                <input ng-model="FinalizeCharacterVC.CharacterInfo.HairColor">
+            </md-input-container>
+        </div>
+        <div layout="row">
+            <md-input-container>
+                <label>Height</label>
+                <input ng-model="FinalizeCharacterVC.CharacterInfo.Height">
+            </md-input-container>
+            <md-input-container>
+                <label>Weight</label>
+                <input ng-model="FinalizeCharacterVC.CharacterInfo.Weight">
+            </md-input-container>
+        </div>
+        <md-input-container style="width:90%;">
+            <label>Background</label>
+            <textarea ng-model="FinalizeCharacterVC.CharacterInfo.Biography"></textarea>
+        </md-input-container>
     </md-card-content>
     <md-card-actions layout="row" layout-align="end center">
-        <md-button>Reset</md-button>
-        <md-button>Action 2</md-button>
+        <!--<md-button class="md-primary md-raised" ng-click="FinalizeCharacterVC.Download()">Download PDF</md-button>-->
+        <md-button class="md-warn md-raised" ng-click="FinalizeCharacterVC.Reset()">Start Over</md-button>
+        <md-button class="md-primary md-raised" ng-click="FinalizeCharacterVC.Save()">Save {{FinalizeCharacterVC.CharacterName}}</md-button>
     </md-card-actions>
 </md-card>

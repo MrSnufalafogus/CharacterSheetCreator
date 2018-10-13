@@ -15,6 +15,7 @@
         characterCreateC.race = null;
         characterCreateC.class = null;
         characterCreateC.background = null;
+        characterCreateC.info = null;
 
         function setRace(inRace) {
             characterCreateC.race = inRace;
@@ -28,12 +29,20 @@
             characterCreateC.char = inChar;
         }
 
+        function setInfo(inInfo) {
+            characterCreateC.info = inInfo;
+        }
+
         function setBackground(inBackground) {
             characterCreateC.background = inBackground;
         }
 
         function getBackground() {
             return characterCreateC.background;
+        }
+
+        function getInfo() {
+            return characterCreateC.info;
         }
 
         function getRace() {
@@ -62,6 +71,23 @@
             characterCreateC.char.Name = name;
         }
 
+        function reset() {
+            characterCreateC.char = null;
+            characterCreateC.race = null;
+            characterCreateC.class = null;
+            characterCreateC.background = null;
+        }
+
+        function wrapUp() {
+            return {
+                Char: characterCreateC.char,
+                Race: characterCreateC.race,
+                Class: characterCreateC.class,
+                Background: characterCreateC.background,
+                Info: characterCreateC.info
+            };
+        }
+
         return {
             //Setters
             setClass: setClass,
@@ -69,15 +95,19 @@
             setChar: setChar,
             setName: setName,
             setBackground: setBackground,
+            setInfo: setInfo,
 
             //Getters
             getRace: getRace,
             getClass: getClass,
             getChar: getChar,
             getCharName: getCharName,
-            getBackground: getBackground
+            getBackground: getBackground,
+            getInfo: getInfo,
 
             //Processes
+            Reset: reset,
+            WrapUp: wrapUp
         };
     }
 

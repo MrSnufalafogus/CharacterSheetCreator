@@ -6,58 +6,39 @@
         .controller("CharactersController", CharactersController);
 
     //Injected Dependencies
-    CharactersController.$inject = ["$scope", "$state", "$mdToast", "$mdMedia", "$mdSidenav"];
+    CharactersController.$inject = ["$scope", "$state", "$mdDialog"];
 
     // Controller
-    function CharactersController($scope, $state, $mdToast, $mdMedia, $mdSidenav) {
+    function CharactersController($scope, $state, $mdDialog) {
         /* jshint validthis:true */
 
         var charactersC = this;
 
         charactersC.AddCharacter = addCharacter;
+        charactersC.Delete = deleteChar;
 
-        charactersC.Characters = [
-            {
-                ClassImage: "http://www.infectedbyart.com/Images/Category_59/subcat_75/2509141648001.jpg",
-                Name: "Smirnoff Heineken 0",
-                ClassName: "Ranger",
-                RaceName: "Gnome",
-                Biography: "Smirnoff has traveled the world far and wide hunting every mythical beast he could find. From Bears to Dragons, Smirnoff has killed them all. But now he seeks a new adventure."
-            },
-            {
-                ClassImage: "http://www.infectedbyart.com/Images/Category_59/subcat_75/2509141648001.jpg",
-                Name: "Smirnoff Heineken 1",
-                ClassName: "Ranger",
-                RaceName: "Gnome",
-                Biography: "Smirnoff has traveled the world far and wide hunting every mythical beast he could find. From Bears to Dragons, Smirnoff has killed them all. But now he seeks a new adventure."
-            },
-            {
-                ClassImage: "http://www.infectedbyart.com/Images/Category_59/subcat_75/2509141648001.jpg",
-                Name: "Smirnoff Heineken 2",
-                ClassName: "Ranger",
-                RaceName: "Gnome",
-                Biography: "Smirnoff has traveled the world far and wide hunting every mythical beast he could find. From Bears to Dragons, Smirnoff has killed them all. But now he seeks a new adventure."
-            },
-            {
-                ClassImage: "http://www.infectedbyart.com/Images/Category_59/subcat_75/2509141648001.jpg",
-                Name: "Smirnoff Heineken 3",
-                ClassName: "Ranger",
-                RaceName: "Gnome",
-                Biography: "Smirnoff has traveled the world far and wide hunting every mythical beast he could find. From Bears to Dragons, Smirnoff has killed them all. But now he seeks a new adventure."
-            },
-            {
-                ClassImage: "http://www.infectedbyart.com/Images/Category_59/subcat_75/2509141648001.jpg",
-                Name: "Smirnoff Heineken 4",
-                ClassName: "Ranger",
-                RaceName: "Gnome",
-                Biography: "Smirnoff has traveled the world far and wide hunting every mythical beast he could find. From Bears to Dragons, Smirnoff has killed them all. But now he seeks a new adventure."
-            }
-        ];
+        charactersC.Characters = JSON.parse(localStorage.getItem("CurrentCharacters")) || [];
 
         return charactersC;
 
         function addCharacter() {
             $state.go("characterSheet.add.characterStart");
+        }
+
+        function deleteChar(index) {
+            var confirm = $mdDialog.confirm()
+                .title('Delete this Character?')
+                .textContent('Are you sure you want to delete your character? Everthing will be forgotten.')
+                .ariaLabel('Delete character')
+                .ok('Yes! Purge it from memory!')
+                .cancel('No! I accidentally clicked this button!');
+
+            $mdDialog.show(confirm).then(function () {
+                charactersC.Characters.splice(index, 1);
+                localStorage.setItem("CurrentCharacters", JSON.stringify(charactersC.Characters));
+            }, function () {
+                //Do nothing on cancel
+            });
         }
     }
 

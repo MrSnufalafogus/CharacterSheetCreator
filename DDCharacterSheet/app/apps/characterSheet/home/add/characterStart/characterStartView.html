@@ -11,8 +11,8 @@
             <input type="text" ng-model="CharacterStartVC.CharacterInfo.Name" ng-change="CharacterStartVC.UpdateName(CharacterStartVC.CharacterInfo.Name)" ng-model-options="{ debounce: 250 }">
         </md-input-container>
         <md-input-container style="margin-bottom:15px; margin-top:0px;">
+            <label>Alignment</label>
             <md-select placeholder="Character Alignment" ng-model="CharacterStartVC.CharacterInfo.Alignment" style="min-width: 200px;">
-                <md-option ng-value="null">None</md-option>
                 <md-option ng-value="'LG'">Lawful Good</md-option>
                 <md-option ng-value="'NG'">Neutral Good</md-option>
                 <md-option ng-value="'CG'">Chaotic Good</md-option>
