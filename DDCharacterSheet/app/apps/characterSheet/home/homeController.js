@@ -17,6 +17,7 @@
         homeC.IsFabOpen = false;
 
         homeC.ToggleSideNav = toggleSideNav;
+        homeC.Logout = logout;
 
         var watcher = $scope.$watch($state.$current.name, function (newVal, oldVal) {
             accessTokenService.checkIfCurrentTokenLogin().then(function (response) {
@@ -30,6 +31,10 @@
 
         function toggleSideNav(id) {
             $mdSidenav(id).toggle();
+        }
+
+        function logout() {
+            $state.go("login");
         }
     }
 

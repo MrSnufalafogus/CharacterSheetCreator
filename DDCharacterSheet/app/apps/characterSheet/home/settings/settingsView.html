@@ -1,1 +1,38 @@
-﻿Settings
+﻿<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Account Settings</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content layout="column">
+        <md-input-container>
+            <label>Change Username</label>
+            <input ng-model="user.title">
+        </md-input-container>
+        <md-checkbox ng-model="data.a" aria-label="Checkbox 1">
+            Allow Token Login?
+        </md-checkbox>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-warn md-raised">Change Account Password</md-button>
+        <md-button class="md-primary md-raised">Save Account Settings</md-button>
+    </md-card-actions>
+</md-card>
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Sharing Settings</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content layout="column">
+        <md-checkbox ng-model="data.s" aria-label="Checkbox 1">
+            Make my characters publicly available!
+        </md-checkbox>
+        <md-checkbox ng-model="data.d" aria-label="Checkbox 1">
+            Share my characters on the character workshop!
+        </md-checkbox>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-primary md-raised">Save Sharing Settings</md-button>
+    </md-card-actions>
+</md-card>

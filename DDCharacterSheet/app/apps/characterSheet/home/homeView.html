@@ -30,13 +30,13 @@
                         </md-button>
                     </md-fab-trigger>
                     <md-fab-actions>
-                        <md-button aria-label="Logout" class="md-fab md-raised md-mini">
+                        <md-button aria-label="Logout" class="md-fab md-raised md-mini" ng-click="HomeVC.Logout()">
                             <md-tooltip md-direction="bottom">Logout</md-tooltip>
                             <md-icon aria-label="Logout">exit_to_app</md-icon>
                         </md-button>
-                        <md-button aria-label="Settings" class="md-fab md-raised md-mini">
+                        <md-button aria-label="Settings" class="md-fab md-raised md-mini" ui-sref="characterSheet.settings">
                             <md-tooltip md-direction="bottom">Account Settings</md-tooltip>
-                            <md-icon aria-label="Settings" ui-sref="characterSheet.settings">settings</md-icon>
+                            <md-icon aria-label="Settings">settings</md-icon>
                         </md-button>
                         <md-button aria-label="Quick Create" class="md-fab md-raised md-mini">
                             <md-tooltip md-direction="bottom">Quick Create</md-tooltip>

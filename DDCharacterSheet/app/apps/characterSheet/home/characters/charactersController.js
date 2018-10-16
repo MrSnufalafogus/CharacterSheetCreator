@@ -16,6 +16,7 @@
 
         charactersC.AddCharacter = addCharacter;
         charactersC.Delete = deleteChar;
+        charactersC.Share = shareChar;
 
         charactersC.Characters = JSON.parse(localStorage.getItem("CurrentCharacters")) || [];
 
@@ -40,6 +41,36 @@
                 //Do nothing on cancel
             });
         }
+
+        function shareChar(char) {
+            var id = makeid();
+            var confirm = $mdDialog.prompt()
+                .title('Share '+char.Char.Name)
+                .textContent('Here is the share ID for your character, copy it and send it to your friends!')
+                .placeholder('Share ID')
+                .ariaLabel('Share ID')
+                .initialValue(id)
+                .required(true)
+                .ok('Cool Thanks!')
+                .cancel('Close');
+
+            $mdDialog.show(confirm).then(function (result) {
+                
+            }, function () {
+
+            });
+        }
+
+        function makeid() {
+            var text = "";
+            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            for (var i = 0; i < 5; i++)
+                text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+            return text;
+        }
+
     }
 
 })();
