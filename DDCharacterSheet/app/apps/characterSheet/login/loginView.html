@@ -1,25 +1,33 @@
-<div layout = "column" flex>
-  <md-toolbar>
-    <div class = "md-toolbar-tools">
-      <h2> D&D Character Creator Login</h2>
-    </div>
-  </md-toolbar>
-  <div layout = "column" layout-align = "center center">
-    <md-whiteframe class = "md-whiteframe-3dp md-margin md-padding">
-      <div layout = "column" layout-align = "center center">
-        <md-input-container>
-          <label> Username</label>
-          <input ng-model = "LoginVC.LoginInfo.Username" ng-change = "LoginVC.Update(LoginVC.LoginInfo.Username)">
-        </md-input-container>
-        <md-input-container>
-          <label> Password</label>
-          <input type = "password">
-        </md-input-container>
-        <md-button class="md-primary md-raised" ng-click="LoginVC.Login('TST-USER', 'TST-PSSWRD', true)">
-            Login
-        </md-button>
-        <md-button class = "md-primary md-raised"> Sign Up</md-button>
-      </div>
-    </md-whiteframe>
-  </div>
+<style>
+    .background {
+        background-image: url("/images/citybkgrd.png") !important;
+        background-color: none;
+        background-size: cover;
+    }
+</style>
+<div layout="column" class="background" layout-align="center center" style="width:100%; height:100%;">
+    <md-card stlye="padding:15px;">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2> D&D Character Creator Login</h2>
+            </div>
+        </md-toolbar>
+        <div layout="column" layout-align="center center">
+            <md-input-container>
+                <label> Username</label>
+                <input ng-model="LoginVC.LoginInfo.Username" ng-change="LoginVC.Update(LoginVC.LoginInfo.Username)">
+            </md-input-container>
+            <md-input-container>
+                <label> Password</label>
+                <input type="password">
+            </md-input-container>
+            <div layout="row">
+                <md-button class="md-primary md-raised"> Sign Up</md-button>
+                <md-button class="md-primary md-raised" ng-click="LoginVC.Login('TST-USER', 'TST-PSSWRD', true)">
+                    Login
+                </md-button>
+            </div>
+
+        </div>
+    </md-card>
 </div>

@@ -48,17 +48,8 @@
     <script src="app/apps/characterSheet/home/add/chooseBackground/traitPicker/traitPickerController.js"></script>
     <!--Services-->
     <script src="app/apps/characterSheet/services/CharacterSheetWebAPI/accessTokenService.js"></script>
-    <style>
-        body {
-            background-image: url("/images/citybkgrd.png") !important;
-            background-color: none;
-            background-size: cover;
-        }
-    </style>
 </head>
 <body>
-    <center style="padding-top:5%;">
-        <md-content class="md-padding" ui-view layout="row" layout-align="center center" style="height:70%; width:30%;"></md-content>
-    </center>
+    <md-content layout="row" ui-view style="height:100%; width:100%;"></md-content>
 </body>
 </html>

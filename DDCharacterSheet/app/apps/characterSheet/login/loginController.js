@@ -9,22 +9,23 @@
     LoginController.$inject = ["$scope", "$state", "$mdToast", "accessTokenService", "authenticationHelper"];
 
     // Controller
-    function LoginController($scope, $state, $mdToast, accessTokenService, authenticationHelper){
-      //Declaring fields
-      var logicC = this;
+    function LoginController($scope, $state, $mdToast, accessTokenService, authenticationHelper) {
+        //Declaring fields
+        var logicC = this;
 
-      logicC.LoginInfo = {
-        Username: "",
-        Password: ""
-      };
+        logicC.LoginInfo = {
+            Username: "",
+            Password: ""
+        };
 
-      logicC.Update = update;
+        logicC.Update = update;
+        logicC.Login = login;
 
-      return logicC;
+        return logicC;
 
-      function update(value){
-        console.log(value);
-      }
+        function update(value) {
+            console.log(value);
+        }
 
         function login(userName, passWord, isLongTerm) {
             accessTokenService.accessTokensLogin(userName, passWord, isLongTerm).then(function (response) {
@@ -35,6 +36,4 @@
             });
         }
     }
-
-
 })();
