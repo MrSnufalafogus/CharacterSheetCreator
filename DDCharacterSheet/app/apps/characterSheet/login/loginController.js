@@ -20,6 +20,7 @@
 
         logicC.Update = update;
         logicC.Login = login;
+        logicC.SignUp = signUp;
 
         return logicC;
 
@@ -34,6 +35,12 @@
             }, function (response) {
                 //Do Nothing
             });
+        }
+
+        //signUp Function
+        function signUp(){
+          //Redirecting to sign up page
+          $state.go("signUp");
         }
     }
 })();
