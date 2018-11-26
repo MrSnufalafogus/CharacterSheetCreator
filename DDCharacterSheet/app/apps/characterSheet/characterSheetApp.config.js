@@ -12,7 +12,7 @@
     // Config
     function characterSheetConfig($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/signUp');
+        $urlRouterProvider.otherwise('/characterSheet');
 
         $stateProvider
 
