@@ -12,7 +12,7 @@
     // Config
     function characterSheetConfig($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/signUp');
 
         $stateProvider
 
@@ -24,6 +24,14 @@
                 templateUrl: "app/apps/characterSheet/login/loginView.html",
                 controller: "LoginController",
                 controllerAs: "LoginVC"
+            })
+
+            /**Sign Up Layout*/
+            .state("signUp", {
+              url: "/signUp",
+              templateUrl: "app/apps/characterSheet/login/signUp/signUpView.html",
+              controller: "SignUpController",
+              controllerAs: "SignUpVC"
             })
 
             /////////////////
