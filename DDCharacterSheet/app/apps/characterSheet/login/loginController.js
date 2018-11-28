@@ -13,22 +13,21 @@
         //Declaring fields
         var logicC = this;
 
+        //Login object
         logicC.LoginInfo = {
             Username: "",
             Password: ""
         };
 
-        logicC.Update = update;
+        //Function callbacks
         logicC.Login = login;
         logicC.SignUp = signUp;
 
+        //Returning logic
         return logicC;
 
-        function update(value) {
-            console.log(value);
-        }
-
-        function login(userName, passWord, isLongTerm) {
+        //Login function
+        function login(userName, passWord, isLongTerm){
             accessTokenService.accessTokensLogin(userName, passWord, isLongTerm).then(function (response) {
                 authenticationHelper.setAccessToken(response.data);
                 $state.go("characterSheet.characters");
