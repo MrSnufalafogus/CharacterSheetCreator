@@ -20,21 +20,21 @@
       <div layout = "row">
         <md-input-container>
           <label> Username</label>
-          <input>
+          <input ng-model = "SignUpVC.SignUpInfo.Username">
         </md-input-container>
         <md-input-container>
           <label> Email</label>
-          <input>
+          <input ng-model = "SignUpVC.SignUpInfo.Email">
         </md-input-container>
       </div>
       <div layout = "row">
         <md-input-container>
           <label> Password</label>
-          <input>
+          <input type = "password" ng-model = "SignUpVC.SignUpInfo.Password">
         </md-input-container>
         <md-input-container>
           <label> Confirm Password</label>
-          <input>
+          <input type = "password" ng-model = "SignUpVC.SignUpInfo.PasswordConfirm">
         </md-input-container>
       </div>
       <div layout = "row">
@@ -43,7 +43,7 @@
           ng-click = "SignUpVC.SignUp()"> Submit</md-button>
         <md-button
           class = "md-primary md-raised"
-          ng-click = "SignUpVC.Back()"> Back</md-button> 
+          ng-click = "SignUpVC.Back()"> Back</md-button>
       </div>
     </div>
   </md-card>
