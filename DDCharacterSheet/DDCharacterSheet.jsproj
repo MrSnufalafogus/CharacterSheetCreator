@@ -82,6 +82,8 @@
     <Content Include="app\apps\characterSheet\home\settings\settingsView.html" />
     <Content Include="app\apps\characterSheet\login\loginController.js" />
     <Content Include="app\apps\characterSheet\login\loginView.html" />
+    <Content Include = "app\apps\characterSheet\login\signUp\signUpController.js"/>
+    <Content Include = "app\apps\characterSheet\login\signUp\signUpView.html"/>
     <Content Include="app\apps\characterSheet\services\CharacterSheetWebAPI\accessTokenService.js" />
     <Content Include="Content\angular-material.css" />
     <Content Include="Content\angular-material.layout-attributes.css" />
@@ -150,7 +152,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment
-       that target and the DisableFastUpToDateCheck PropertyGroup. 
+       that target and the DisableFastUpToDateCheck PropertyGroup.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
