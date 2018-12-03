@@ -15,11 +15,11 @@
         <div layout = "column" layout-align = "center center">
             <md-input-container>
                 <label> Username</label>
-                <input ng-model = "LoginVC.LoginInfo.Username" ng-change = "LoginVC.Update(LoginVC.LoginInfo.Username)">
+                <input ng-model = "LoginVC.LoginInfo.Username">
             </md-input-container>
             <md-input-container>
                 <label> Password</label>
-                <input type="password">
+                <input ng-model = "LoginVC.LoginInfo.Password" type = "password">
             </md-input-container>
             <div layout = "row">
                 <md-button class = "md-primary md-raised" ng-click = "LoginVC.SignUp()"> Sign Up</md-button>
